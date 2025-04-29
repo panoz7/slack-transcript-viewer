@@ -1,0 +1,67 @@
+
+div.message {
+
+    break-inside: avoid;
+
+
+    .message-text {
+        break-inside: avoid;
+    }
+
+    h3 {
+        
+        font-size: 13px;
+
+        span.date {
+            font-size: 10px;
+            font-weight: normal;
+            color: #444;
+            margin-left: 5px;
+        }
+
+        margin: 0 0 2px 0;
+        padding: 0;
+    }
+
+    p {
+        font-size: 12.5px;
+        margin: 0;
+        padding: 0;
+
+
+    }
+
+    margin-bottom: 10px;
+
+    img {
+        max-width: 50%;
+        max-height: 50%;
+        margin: 10px 0;
+    }
+
+    div.file {
+        background-color: #eee;
+        padding: 20px;
+        margin: 10px 0;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+.replies {
+    margin-left: 10px;
+    margin-top: 10px;
+}
+
+app-message {
+    display: block;
+    padding-left: 10px;
+    border-left: 2px solid #999;
+}
+
+@media print {
+    .attachment {
+      color: black;
+      text-decoration: none;
+    }
+}

@@ -1,0 +1,37 @@
+
+@if (message()) {
+
+    <div class="message">
+        <div class="message()-text">
+            <h3>{{message()?.displayName}} <span class="date">{{message()?.date | date:'short'}}</span></h3>
+            <p [innerHTML]="message()?.text"></p>
+        </div>
+
+        @if (message()?.files) {
+            <div class="message-files">
+            @for (file of message()?.files; track file) {
+                @if(['jpg', 'png', 'gif'].includes(file.fileType)) {
+                    <!-- <img [src]="'assets/slack-files/'+currentLogData()?.channel+'/'+file.fileName"> -->
+                     <img [src]="files()?.get(file.fileName)?.url">
+                }
+                @else {
+                    <div class="file">
+                        <h3>{{file.fileType | uppercase }} Attachment</h3>
+                        <p>Please see <a class="attachment" [href]="files()?.get(file.fileName)?.url" [download]="file.fileName">{{zs.zipName()}}/{{file.fileName}}</a></p>
+                    </div>
+                }
+            }
+            </div>
+        }
+
+        @if (message()?.replies) {
+            <div class="replies">
+                @for (messageTimeStamp of message()?.replies; track messageTimeStamp) {
+                    <app-message [message]="zs.getReply(messageTimeStamp)"></app-message>
+                }
+            </div>
+        }
+
+    </div>
+
+}

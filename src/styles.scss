@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+span.at-mention {
+    color: #005abf;
+}
+
+// body {
+//     margin: 0;
+// }
+
+
+a, a:visited {
+    color: #005abf;
+    overflow-wrap: break-word;
+}
